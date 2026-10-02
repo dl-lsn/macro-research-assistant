@@ -14,7 +14,7 @@ client = genai.Client(api_key=api_key)
 
 response = client.models.generate_content(
     model="gemini-3.5-flash-lite",
-    contents="Explain a central bank policy rate in two simple sentences.",
+    contents="Explain EUR/CHF volatility to a finance beginner in three sentences.",
 )
 
 print(response.text)
