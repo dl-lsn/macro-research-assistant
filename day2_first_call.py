@@ -12,9 +12,28 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 
+prompt = """
+Explain how a stronger Swiss franc affects:
+1. Swiss exporters.
+2. Swiss importers.
+3. The Swiss National Bank.
+Use no more than 120 words.
+"""
+
+token_count = client.models.count_tokens(
+    model="gemini-3.5-flash-lite",
+    contents=prompt,
+)
+
+print("Input tokens:", token_count.total_tokens)
+
 response = client.models.generate_content(
     model="gemini-3.5-flash-lite",
-    contents="Explain EUR/CHF volatility to a finance beginner in three sentences.",
+    contents=prompt,
+    config={
+        "temperature": 0.2
+        
+    },
 )
 
 print(response.text)
