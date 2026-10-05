@@ -1,5 +1,7 @@
 import os
+from pathlib import Path
 
+import time
 import pandas as pd
 from dotenv import load_dotenv
 from google import genai
@@ -87,4 +89,43 @@ for attempt in range(3):
 
 
 # Print the generated research note.
-print(response.text)
+#print(response.text)
+report = f"""# Effective Federal Funds Rate Research Note
+
+## Report date
+
+{pd.Timestamp.now().date()}
+
+## Data source
+
+- Source: Federal Reserve Economic Data (FRED)
+- Series: FEDFUNDS
+- Description: Monthly effective federal funds rate
+- Latest observation date: {latest["date"].date()}
+
+## Latest data
+
+| Metric | Value |
+|---|---:|
+| Latest effective federal funds rate | {latest["value"]:.2f}% |
+| Previous effective federal funds rate | {previous["value"]:.2f}% |
+| Latest monthly change | {latest["change"]:.2f} percentage points |
+| Historical average | {df["value"].mean():.2f}% |
+| Historical minimum | {df["value"].min():.2f}% |
+| Historical maximum | {df["value"].max():.2f}% |
+
+## Gemini analysis
+
+{response.text}
+
+## Important caveat
+
+The FEDFUNDS series represents the effective federal funds rate, which is a market outcome based on overnight transactions. It is not the same as the lower bound, upper bound, or midpoint of the Federal Open Market Committee target range.
+
+This note is based only on the supplied FRED data and should not be treated as a complete forecast of future monetary policy.
+"""
+
+report_path = Path("macro_research_note.md")
+report_path.write_text(report, encoding="utf-8")
+
+print(f"Research note saved to: {report_path}")
