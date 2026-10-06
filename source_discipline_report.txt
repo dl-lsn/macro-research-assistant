@@ -1,0 +1,28 @@
+Source Discipline Report
+=======================
+
+Evidence categories:
+- FRED numerical observations
+- Official Federal Reserve documents
+- Project-derived calculations
+- Gemini interpretation
+
+Registered FRED data sources:
+- fed_funds: FEDFUNDS | monthly | percent | Federal Reserve Board
+- cpi: CPIAUCSL | monthly | index | U.S. Bureau of Labor Statistics
+- payrolls: PAYEMS | monthly | thousands of persons | U.S. Bureau of Labor Statistics
+- unemployment: UNRATE | monthly | percent | U.S. Bureau of Labor Statistics
+- treasury_10y: DGS10 | daily | percent | Board of Governors of the Federal Reserve System
+
+Registered official documents:
+- fomc_statement: Board of Governors of the Federal Reserve System | official policy document
+
+Registered derived datasets:
+- frequency_aligned: frequency_aligned.csv | project-derived data
+- macro_derived: macro_derived.csv | project-derived data
+
+Registered interpretation outputs:
+- structured_analysis: structured_analysis.json | Gemini interpretation
+
+Validation result:
+PASSED: all required source metadata exists.

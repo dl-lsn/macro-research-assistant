@@ -1,0 +1,96 @@
+{
+    "data_sources": {
+        "fed_funds": {
+            "name": "Federal funds effective rate",
+            "series_id": "FEDFUNDS",
+            "provider": "Federal Reserve Bank of St. Louis",
+            "database": "FRED",
+            "source_institution": "Federal Reserve Board",
+            "frequency": "monthly",
+            "units": "percent",
+            "role": "observed economic data"
+        },
+        "cpi": {
+            "name": "Consumer Price Index",
+            "series_id": "CPIAUCSL",
+            "provider": "Federal Reserve Bank of St. Louis",
+            "database": "FRED",
+            "source_institution": "U.S. Bureau of Labor Statistics",
+            "frequency": "monthly",
+            "units": "index",
+            "role": "observed economic data"
+        },
+        "payrolls": {
+            "name": "All Employees, Total Nonfarm",
+            "series_id": "PAYEMS",
+            "provider": "Federal Reserve Bank of St. Louis",
+            "database": "FRED",
+            "source_institution": "U.S. Bureau of Labor Statistics",
+            "frequency": "monthly",
+            "units": "thousands of persons",
+            "role": "observed economic data"
+        },
+        "unemployment": {
+            "name": "Unemployment Rate",
+            "series_id": "UNRATE",
+            "provider": "Federal Reserve Bank of St. Louis",
+            "database": "FRED",
+            "source_institution": "U.S. Bureau of Labor Statistics",
+            "frequency": "monthly",
+            "units": "percent",
+            "role": "observed economic data"
+        },
+        "treasury_10y": {
+            "name": "10-Year Treasury Constant Maturity Rate",
+            "series_id": "DGS10",
+            "provider": "Federal Reserve Bank of St. Louis",
+            "database": "FRED",
+            "source_institution": "Board of Governors of the Federal Reserve System",
+            "frequency": "daily",
+            "units": "percent",
+            "role": "observed economic data"
+        }
+    },
+    "official_documents": {
+        "fomc_statement": {
+            "name": "Federal Reserve FOMC statement",
+            "provider": "Board of Governors of the Federal Reserve System",
+            "document_type": "official policy document",
+            "file": "fed_context.txt",
+            "metadata_file": "fed_context_metadata.json",
+            "role": "official policy context"
+        }
+    },
+    "derived_data": {
+        "frequency_aligned": {
+            "file": "frequency_aligned.csv",
+            "methods": [
+                "monthly date alignment",
+                "monthly average",
+                "latest monthly observation",
+                "month-end observation",
+                "complete-case filtering"
+            ],
+            "role": "project-derived data"
+        },
+        "macro_derived": {
+            "file": "macro_derived.csv",
+            "methods": [
+                "monthly changes",
+                "year-over-year changes",
+                "term spread",
+                "rolling averages",
+                "z-scores"
+            ],
+            "role": "project-derived data"
+        }
+    },
+    "interpretation": {
+        "structured_analysis": {
+            "file": "structured_analysis.json",
+            "model_output": true,
+            "role": "Gemini interpretation",
+            "warning": "Not an independent data source or official policy statement"
+        }
+    }
+}
