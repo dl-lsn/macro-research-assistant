@@ -1,0 +1,61 @@
+{
+    "project": {
+        "name": "Macro Research Assistant",
+        "date_column": "date",
+        "month_column": "month"
+    },
+    "series": {
+        "fed_funds": {
+            "id": "FEDFUNDS",
+            "label": "Federal funds rate",
+            "frequency": "monthly",
+            "unit": "percent"
+        },
+        "cpi": {
+            "id": "CPIAUCSL",
+            "label": "Consumer Price Index",
+            "frequency": "monthly",
+            "unit": "index"
+        },
+        "payrolls": {
+            "id": "PAYEMS",
+            "label": "Total nonfarm payrolls",
+            "frequency": "monthly",
+            "unit": "thousands of persons"
+        },
+        "unemployment": {
+            "id": "UNRATE",
+            "label": "Unemployment rate",
+            "frequency": "monthly",
+            "unit": "percent"
+        },
+        "treasury_10y": {
+            "id": "DGS10",
+            "label": "10-year Treasury yield",
+            "frequency": "daily",
+            "unit": "percent"
+        }
+    },
+    "files": {
+        "fed_funds_clean": "fedfunds_clean.csv",
+        "cpi_clean": "cpi_clean.csv",
+        "employment_clean": "employment_clean.csv",
+        "treasury_clean": "treasury_clean.csv",
+        "frequency_aligned": "frequency_aligned.csv",
+        "macro_context": "macro_context.csv",
+        "macro_derived": "macro_derived.csv",
+        "validation_report": "validation_report.txt"
+    },
+    "aggregation": {
+        "fed_funds": "mean",
+        "cpi": "last",
+        "employment": "last",
+        "treasury_average": "mean",
+        "treasury_month_end": "last"
+    },
+    "derived_metrics": {
+        "year_over_year_periods": 12,
+        "rolling_window": 3,
+        "rolling_min_periods": 3
+    }
+}
