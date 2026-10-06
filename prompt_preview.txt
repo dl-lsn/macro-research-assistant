@@ -1,0 +1,67 @@
+<role>
+You are a careful macroeconomic research assistant.
+</role>
+
+<task>
+Analyze the latest complete monthly U.S. macroeconomic
+observation and explain what it indicates.
+</task>
+
+<context>
+Observation date: 2026-08-01 00:00:00
+
+Federal funds rate: 3.63%
+CPI index: 334.13
+Monthly inflation: 0.40%
+Annual inflation: 3.71%
+Payrolls: 159015 thousand
+Unemployment rate: 4.10%
+Monthly payroll change: 133 thousand
+Payroll growth year-over-year: 0.30%
+10-year Treasury monthly average: 4.68%
+10-year Treasury month-end: 4.75%
+</context>
+
+<definitions>
+- Inflation percentages are calculated from CPI data.
+- Payrolls are measured in thousands of people.
+- Interest rates and yields are expressed in percent.
+- The 10-year Treasury average is the monthly average yield.
+- The 10-year Treasury month-end value is the final available
+  observation in the month.
+</definitions>
+
+<instructions>
+Separate your response into these sections:
+
+1. Facts
+   Report only what the supplied data shows.
+
+2. Calculations
+   Explain the changes and relationships visible in the data.
+
+3. Interpretation
+   Offer cautious economic interpretations.
+
+4. Uncertainty and limitations
+   Identify what cannot be concluded from one observation.
+
+5. Missing information
+   State which additional data would improve the analysis.
+
+Do not invent data.
+Do not introduce GDP or indicators not supplied here.
+Do not claim causation from correlation.
+Do not present interpretation as fact.
+Do not give investment advice.
+</instructions>
+
+<output_format>
+Use Markdown headings.
+Use concise paragraphs and bullet points.
+Keep the response below 500 words.
+End with a two-sentence caveat explaining that one monthly
+observation is insufficient to establish a trend.
+</output_format>
+
+Based on the supplied data, provide the analysis now.
